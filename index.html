@@ -9,6 +9,9 @@
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/custom.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
@@ -21,12 +24,407 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+		<script src="https://d3js.org/d3.v5.js"></script>
+
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<!-- ------------- -->
+				<section>
+					<h3>VISUALIZATION</h3>
+					<div class="sub-head">
+	          <div class="sub-head-text"><span>David Sasson – 11.14.19</span></div>
+	        </div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>Why is visualization important?</h5>
+					<div class="sub-head">
+	          <div class="sub-head-text">
+							<span>It's more than just bar charts</span>
+						</div>
+	        </div>
+					<div class="child-slide-body">
+						<img class="child-slide-img" src="assets/pacman.jpg" height="auto"/>
+	        </div>
+
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>Who am I?</h5>
+					<div class="sub-head">
+	          <div class="sub-head-text">
+							<span>Also more than just bar charts</span>
+						</div>
+	        </div>
+					<img class="child-slide-img" src="assets/dots.jpg" height="350vh" style="float:left;"/>
+					<img class="child-slide-img" src="assets/sleep.png" height="350vh" style="float:right;"/>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>What is visualization about?</h5>
+					<div class="sub-head">
+	          <div class="sub-head-text">
+							<span>More than just bar charts</span>
+						</div>
+					</div>
+					<div class="child-slide-body">
+						<ul class="child-slide-body-list">
+	            <li>
+	              <div class="list-item-container">
+	                ~<span>Explaining complex concepts</span>
+	              </div>
+	            </li>
+	            <li>
+	              <div class="list-item-container">
+	                ~<span>Showing rather than telling</span>
+	              </div>
+	            </li>
+	            <li>
+	              <div class="list-item-container">
+	                ~<span>Elicit knowledge and understanding</span>
+	              </div>
+	            </li>
+	            <li>
+	              <div class="list-item-container">
+	                ~<span>Visualizations are incredibly powerful, but also easy to abuse</span>
+	              </div>
+	            </li>
+						</ul>
+	        </div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>What's the point</h5>
+					<div class="child-slide-body">
+						<img class="child-slide-img" src="assets/pyramid.png" width="80%"/>
+					</div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>A little history</h5>
+					<div class="sub-head">
+	          <div class="sub-head-text">
+							<span>Minard Map – "brutal eloquence"</span>
+						</div>
+					</div>
+					<div class="child-slide-body">
+						<img class="child-slide-img" src="assets/minard.png" width="100%"/>
+					</div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>A little history</h5>
+					<div class="sub-head">
+	          <div class="sub-head-text">
+							<span>Nightingale's Charts</span>
+						</div>
+					</div>
+					<div class="child-slide-body">
+						<img class="child-slide-img" src="assets/nightingale.jpg" width="60%"/>
+					</div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>Evolution</h5>
+					<div class="sub-head">
+	          <div class="sub-head-text">
+							<span>interactive choropleth</span>
+						</div>
+					</div>
+					<div class="child-slide-body">
+						<img class="child-slide-img" src="assets/drought.gif" width="80%"/>
+					</div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>What is visualization about?</h5>
+					<div class="sub-head">
+	          <div class="sub-head-text">
+							<span>Elicit Understanding</span>
+						</div>
+					</div>
+					<div class="child-slide-body">
+						<ul class="child-slide-body-list">
+	            <li>
+	              <div class="list-item-container">
+	                ~<span>Understanding is concrete, data is messy</span>
+	              </div>
+	            </li>
+	            <li>
+	              <div class="list-item-container">
+	                ~<span>How you show people data makes all the difference</span>
+	              </div>
+	            </li>
+						</ul>
+	        </div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>Pitfalls and Open Problems</h5>
+					<div class="sub-head">
+	          <div class="sub-head-text">
+							<span>Bias and manipulation</span>
+						</div>
+					</div>
+					<div class="child-slide-body">
+						<ul class="child-slide-body-list">
+	            <li>
+	              <div class="list-item-container">
+	                ~<span>biased data</span>
+	              </div>
+	            </li>
+	            <li>
+	              <div class="list-item-container">
+	                ~<span>misleading context</span>
+	              </div>
+	            </li>
+	            <li>
+	              <div class="list-item-container">
+	                ~<span>biased visualization designer</span>
+	              </div>
+	            </li>
+	            <li>
+	              <div class="list-item-container">
+	                ~<span>prior knowledge problem</span>
+	              </div>
+	            </li>
+	            <li>
+	              <div class="list-item-container">
+	                ~<span>uncertainty problem</span>
+	              </div>
+	            </li>
+						</ul>
+	        </div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>Prior Knowledge</h5>
+					<div class="child-slide-body">
+						<img class="child-slide-img" src="assets/soil.gif" width="80%"/>
+	        </div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>Prior Knowledge</h5>
+					<div class="sub-head">
+	          <div class="sub-head-text">
+							<span>Pioneer Plaque</span>
+						</div>
+					</div>
+					<div class="child-slide-body">
+						<ul class="child-slide-body-list">
+							<li>
+	              <div class="list-item-container">
+	                ~<span>What knowledge can you assume?</span>
+	              </div>
+	            </li>
+	            <li>
+	              <div class="list-item-container">
+	                ~<span>How do you design for aliens?</span>
+	              </div>
+	            </li>
+	            <li>
+	              <div class="list-item-container">
+	                ~<span>"We are humans and we come in peace"</span>
+	              </div>
+	            </li>
+						</ul>
+	        </div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>Pioneer Plaque</h5>
+					<div class="child-slide-body">
+						<img class="child-slide-img" src="assets/pioneer.png" width="60%"/>
+	        </div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>Uncertainty!</h5>
+					<div class="child-slide-body">
+						<ul class="child-slide-body-list">
+	            <li>
+	              <div class="list-item-container">
+	                ~<span>Most data sets have some level of uncertainty</span>
+	              </div>
+	            </li>
+	            <li>
+	              <div class="list-item-container">
+	                ~<span>Especially when ML or future projections are involved</span>
+	              </div>
+	            </li>
+	            <li>
+	              <div class="list-item-container">
+	                ~<span>Communicating this uncertainty is incredibly difficult</span>
+	              </div>
+	            </li>
+	            <li>
+	              <div class="list-item-container">
+	                ~<span>Often uncertainty in the data is just ignored</span>
+	              </div>
+	            </li>
+						</ul>
+	        </div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>Uncertainty?</h5>
+					<div class="child-slide-body">
+						<img class="child-slide-img" src="assets/marginerror.png" width="60%"/>
+	        </div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>Uncertainty?</h5>
+					<div class="child-slide-body">
+						<img class="child-slide-img" src="assets/unemployment.png" width="60%"/>
+	        </div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>Data Doubts</h5>
+					<div class="child-slide-body">
+						<a href="https://www.gapminder.org/tools/" target="_blank">Gapminder</a>
+	        </div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>Design Decisions</h5>
+					<div class="sub-head">
+	          <div class="sub-head-text">
+							<span>Gallup abortion poll</span>
+						</div>
+					</div>
+					<div class="child-slide-body">
+						<img class="child-slide-img" src="assets/abortionpoll.png" width="40%" style="float:left;"/>
+						<img class="child-slide-img" src="assets/greengraph.png" width="55%" style="float:right;"/>
+						<!-- <span>NY Weather data</span> -->
+	        </div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>Design Decisions</h5>
+					<div class="sub-head">
+	          <div class="sub-head-text">
+							<span>misrepresentation?</span>
+						</div>
+					</div>
+					<div class="child-slide-body">
+						<img class="child-slide-img" src="assets/greengraph.png" width="50%" style="float:left;"/>
+						<img class="child-slide-img" src="assets/redgraph.png" width="40%" style="float:right;"/>
+	        </div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>Design Decisions</h5>
+					<div class="sub-head">
+	          <div class="sub-head-text">
+							<span>Interpreting the data</span>
+						</div>
+					</div>
+					<div class="child-slide-body">
+						<ul class="child-slide-body-list">
+	            <li>
+	              <div class="list-item-container">
+	                ~<span>Scales</span>
+	              </div>
+	            </li>
+	            <li>
+	              <div class="list-item-container">
+	                ~<span>Shapes</span>
+	              </div>
+	            </li>
+	            <li>
+	              <div class="list-item-container">
+	                ~<span>Interpolations</span>
+	              </div>
+	            </li>
+	            <li>
+	              <div class="list-item-container">
+	                ~<span>Color Choices</span>
+	              </div>
+	            </li>
+						</ul>
+	        </div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>Interpolations</h5>
+					<div class="child-slide-body">
+						<img class="child-slide-img" src="assets/interpolations.png" width="80%"/>
+	        </div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>Wind</h5>
+					<div class="child-slide-body">
+						<img class="child-slide-img" src="assets/wind.svg" width="80%"/>
+	        </div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>Making a Point</h5>
+					<div class="child-slide-body">
+						<a href="https://guns.periscopic.com/?year=2013" target="_blank">Visualizing loss of life</a>
+	        </div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<div class="child-slide-body">
+						<span>“data journalism is successful when you don’t need the adjective” <br><br> – Amanda Cox, Data editor NYT</span>
+	        </div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>Thank You!</h5>
+					<div class="child-slide-body">
+						<span>dsass.github.io/viztalk</span>
+						<br><br>
+						<span>david.e.sasson@gmail.com</span>
+						<br><br>
+						<span>dsasson.com</span>
+	        </div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>Addendum</h5>
+					<div class="sub-head">
+	          <div class="sub-head-text">
+							<span>Stop and Frisk</span>
+						</div>
+					</div>
+					<div class="child-slide-body">
+						<a href="https://www.nytimes.com/interactive/2014/09/19/nyregion/stop-and-frisk-map.html" target="_blank">Interactive Map</a>
+						<img class="child-slide-img" src="assets/crimes.png" width="80%"/>
+	        </div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>Addendum</h5>
+					<div class="sub-head">
+	          <div class="sub-head-text">
+							<span>Map Projections</span>
+						</div>
+					</div>
+					<div class="child-slide-body">
+						<img class="child-slide-img" src="assets/maps.png" width="100%"/>
+	        </div>
+				</section>
+				<!-- ------------- -->
+				<section>
+					<h5>Addendum</h5>
+					<div class="sub-head">
+	          <div class="sub-head-text">
+							<span>Map Projections</span>
+						</div>
+					</div>
+					<div class="child-slide-body">
+						<img class="child-slide-img" src="assets/projection.png" width="100%"/>
+	        </div>
+				</section>
 			</div>
 		</div>
 
@@ -44,6 +442,11 @@
 					{ src: 'plugin/highlight/highlight.js', async: true }
 				]
 			});
+
+			Reveal.configure({
+	      slideNumber: true,
+	      slideNumber: 'c/t'
+	    });
 		</script>
 	</body>
 </html>
